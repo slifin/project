@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "babylonjs": "^7.33.0",
+    "shadow-cljs": "2.25.6",
+    "websocket": "1.0.34"
+  }
+}

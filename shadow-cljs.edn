@@ -1,0 +1,18 @@
+{:deps {:aliases [:cljs-storm]}
+ :nrepl {:port 7123}
+ :builds
+ {:dev  {:target :browser
+         :devtools {;:loader-mode :default
+                    :preloads [flow-storm.storm-preload]
+                    :http-port 8021
+                    :http-root "resources"}
+         :output-dir "resources/public/electric_starter_app/js"
+         :asset-path "/js"
+         :compiler-options {:infer-externs false}
+         :modules {:main {:entries [dev] :init-fn dev/start!}}
+         :build-hooks [(hyperfiddle.electric.shadow-cljs.hooks3/reload-clj)]}
+  :prod {:target :browser
+         :output-dir "resources/public/electric_starter_app/js"
+         :asset-path "/js"
+         :modules {:main {:entries [prod] :init-fn prod/start!}}
+         :module-hash-names true}}}
